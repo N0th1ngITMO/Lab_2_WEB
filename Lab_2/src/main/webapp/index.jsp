@@ -8,6 +8,7 @@
     <title>Лабораторная работа №2</title>
     <link rel="stylesheet" href="styles.css"/>
     <script src="script.js"></script>
+    <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 </head>
 <body onload="onLoad()">
 <div class="header">
@@ -17,35 +18,12 @@
 </div>
 
 <div class="grafic">
-    <div style="display: flex">
-        <canvas height="322px" width="422px" id="canvas" style="border: 1px solid #000; margin: auto; background-color: aliceblue"></canvas>
-        <script>
-            var canvas = document.getElementById("canvas"),
-                context = canvas.getContext("2d"),
-                w = canvas.width,
-                h=canvas.height;
-
-            var mouse = { x:0, y:0};
-            var draw = false;
-
-            canvas.addEventListener("click", function(e){
-                if(r != null){
-                    mouse.x = e.pageX - this.offsetLeft;
-                    mouse.y = e.pageY - this.offsetTop;
-                    x = (mouse.x - 208)/34.5;
-                    y = -(mouse.y - 160)/25.665;
-                    console.log(x);
-                    console.log(y);
-                    sendRequest("JSON");
-                }
-            });
-        </script>
-    </div>
+    <div id="calculator" onclick="getCoorOfClick(event)"></div>
 
     <div id="table" style="overflow: auto;">
-        <table class="resultsTable" border="1" cellpadding="7" cellspacing="0" width="100%" >
-            <caption style="font: small-caps bold 22px/1 sans-serif;">Таблица результатов</caption>
-            <thead>
+        <table class="resultsTable" border="1" cellpadding="7" cellspacing="0" >
+            <caption style="font: small-caps bold 2vw/1 sans-serif;">Таблица результатов</caption>
+            <thead style="font-size: 1vw">
             <tr >
                 <th>X</th>
                 <th>Y</th>
@@ -55,7 +33,7 @@
                 <th>Результат</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody style="font-size: 1vw">
             </tbody>
         </table>
         <ol><button type="button" id="clearTableButton" onclick="onClearButtonClicked()">Очистить таблицу</button></ol>

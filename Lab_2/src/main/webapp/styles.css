@@ -23,6 +23,15 @@ body{
     justify-items: center;
 }
 
+#calculator{
+    width: 28vw;
+    height: 24vw;
+    max-width: 600px;
+    max-height: 400px;
+    margin: auto;
+    border-radius: 20px;
+}
+
 #img{
     align-items: center;
     margin: auto;
@@ -49,7 +58,7 @@ button:hover{
     margin-top: 20px;
     background-color: antiquewhite;
     border: 1px solid #333;
-    height: 295px;
+    height: 185px;
     width: 100%;
 }
 
@@ -97,7 +106,7 @@ ol#submit_but{
 
 .resultsTable{
     border: 1px solid #000;
-    width: 600px;
+    width: 35vw;
 }
 
 

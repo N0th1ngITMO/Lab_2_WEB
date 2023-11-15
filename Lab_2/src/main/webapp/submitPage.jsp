@@ -1,4 +1,6 @@
-<%--
+<%@ page import="com.example.lab_2.BeanComponent" %>
+<%@ page import="com.google.gson.JsonObject" %>
+<%@ page import="java.util.HashMap" %><%--
   Created by IntelliJ IDEA.
   User: dimak
   Date: 11/1/2023
@@ -14,7 +16,7 @@
     <link rel="stylesheet" href="stylesForSubmitPage.css"/>
     <script src="scriptForSubmitPage.js"></script>
 </head>
-<body onload="onLoad()">
+<body>
 <div class="header">
     <div class="name">
         <p>Комягин Дмитрий Анатольевич, группа Р3232, вариант 1306</p>
@@ -35,6 +37,18 @@
             </tr>
             </thead>
             <tbody>
+            <tr>
+                <%
+                    HashMap json = BeanComponent.getMyDotsCollection();
+                    JsonObject j = (JsonObject) json.get(json.size());
+                %>
+                <td><%=j.get("X")%></td>
+                <td><%=j.get("Y")%></td>
+                <td><%=j.get("R")%></td>
+                <td><%=j.get("Timezone")%></td>
+                <td><%=j.get("TimeCompliting")%></td>
+                <td><%=j.get("HitCheck")%></td>
+            </tr>
             </tbody>
         </table>
     </div>

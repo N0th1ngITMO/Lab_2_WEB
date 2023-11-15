@@ -26,7 +26,7 @@ public class AreaCheckServlet extends HttpServlet {
             JsonObject jsonObject = (JsonObject) parser.parse(data);
             data = data.substring(0, data.length()-1);
             System.out.println(data);
-            data += ",\"TimeCompliting\":\"" + (System.nanoTime() - (long)req.getAttribute("TimeCompliting")) + "\",\"HitCheck\":\"" + CheckHit.checkHit(jsonObject, Double.parseDouble(jsonObject.get("R").toString().substring(1, jsonObject.get("R").toString().length()-1))) + "\"}";
+            data += ",\"TimeCompliting\":\"" + (System.nanoTime() - (long)req.getAttribute("TimeCompliting")) + "\",\"HitCheck\":\"" + CheckHit.checkHit(jsonObject, Double.parseDouble(jsonObject.get("R").toString())) + "\"}";
             jsonObject = (JsonObject) parser.parse(data);
             BeanComponent.setMyDotsCollection(jsonObject);
             bufferedReader.close();
